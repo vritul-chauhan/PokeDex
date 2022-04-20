@@ -1,6 +1,6 @@
 use actix_web::{web, HttpResponse};
 
-use crate::handle::get_all_pokemons;
+use crate::handle::{get_all_pokemons, get_pokemon};
 
 async fn ping() -> HttpResponse {
     HttpResponse::Ok().body("Server is running")
@@ -9,6 +9,8 @@ async fn ping() -> HttpResponse {
 pub fn get_routes(cfg: &mut web::ServiceConfig) {
     cfg.service(web::resource("/").route(web::get().to(ping)))
         .service(
-            web::scope("/getPokemon").route("/getAllPokemons", web::get().to(get_all_pokemons)),
+            web::scope("/pokemon")
+                .route("/getAllPokemons", web::get().to(get_all_pokemons))
+                .route("/getPokemon", web::get().to(get_pokemon)),
         );
 }
