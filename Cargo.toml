@@ -1,0 +1,16 @@
+[package]
+name = "data-management"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.0.1"
+arrow = "9.0"
+config = "0.13.1"
+datafusion = "7.1.0"
+lazy_static = "1.4.0"
+serde = "1.0.136"
+serde_json = "1.0.79"
+tokio = { version = "1.17.0", features = ["sync"] }
