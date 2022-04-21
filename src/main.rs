@@ -1,3 +1,4 @@
+mod filter;
 mod handle;
 mod routes;
 mod settings;
