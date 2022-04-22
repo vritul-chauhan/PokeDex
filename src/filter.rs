@@ -1,8 +1,11 @@
 pub enum FilterValue<T> {
-    Equal(T),
-    NotEqual(T),
+    NumEqual(T),
+    StrEqual(T),
     Like(T),
-    NotLike(T),
+    GreaterThan(T),
+    LesserThan(T),
+    OneType(T),
+    TwoType(T),
 }
 
 pub struct PokeFilter<T> {
